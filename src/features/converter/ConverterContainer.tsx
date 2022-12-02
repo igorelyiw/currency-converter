@@ -27,17 +27,17 @@ const ConverterContainer = ({ currencies }: ConverterContainerProps) => {
         setIsActiveFrom(false);
         setInputValueFrom(Number(e.currentTarget.value));
     };
-    const x = '';
-    console.log();
+        const x = '';
+        console.log();
         const obj = {
             a: 1,
             b: 2,
         };
-                useEffect(() => {
-                    const { rate } = currencies.filter((item) => item.name === inputTo)[0];
-                    setInputValueTo(inputValueFrom * rate);
-                    fetchConvert(inputFrom, inputTo).then((data) => setInputValueTo(data.result * inputValueFrom));
-                }, [inputValueFrom, inputFrom, inputTo, currencies]);
+            useEffect(() => {
+                const { rate } = currencies.filter((item) => item.name === inputTo)[0];
+                setInputValueTo(inputValueFrom * rate);
+                fetchConvert(inputFrom, inputTo).then((data) => setInputValueTo(data.result * inputValueFrom));
+            }, [inputValueFrom, inputFrom, inputTo, currencies]);
 
     useEffect(() => {
         const { rate } = currencies.filter((item) => item.name === inputTo)[0];

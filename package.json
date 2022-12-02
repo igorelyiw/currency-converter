@@ -23,6 +23,8 @@
         "eject": "react-scripts eject",
         "lint": "eslint -c .eslintrc --ext .ts,.tsx ./src",
         "lint:fix": "npm run lint -- --fix",
+        "check:lint":"prettier --check ./src",
+        "format":"prettier --write ./src",
         "build-css": "tailwindcss build src/index.css -o src/tailwind.css"
     },
     "browserslist": {
@@ -47,7 +49,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged"
+            "pre-commit": "yarn format && git add ."
         }
     },
     "lint-staged": {

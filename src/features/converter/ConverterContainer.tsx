@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+
 import { fetchConvert } from '../api/api';
 import { DOLLAR, HRYVNIA } from '../constants';
 import { CurrencyCodeType } from '../types';
+
 import { ConverterView } from './converterView';
 
 export interface CurrencieProps {
@@ -20,17 +23,21 @@ const ConverterContainer = ({ currencies }: ConverterContainerProps) => {
     const [isActiveFrom, setIsActiveFrom] = useState(false);
     const [inputValueFrom, setInputValueFrom] = useState(1000);
     const [inputValueTo, setInputValueTo] = useState(0);
-
     const onChangeInputValue = (e: React.FormEvent<HTMLInputElement>) => {
         setIsActiveFrom(false);
         setInputValueFrom(Number(e.currentTarget.value));
     };
-
-    useEffect(() => {
-        const { rate } = currencies.filter((item) => item.name === inputTo)[0];
-        setInputValueTo(inputValueFrom * rate);
-        fetchConvert(inputFrom, inputTo).then((data) => setInputValueTo(data.result * inputValueFrom));
-    }, [inputValueFrom, inputFrom, inputTo, currencies]);
+    const x = '';
+    console.log();
+    const obj = {
+        a: 1,
+        b: 2,
+    };
+            useEffect(() => {
+                const { rate } = currencies.filter((item) => item.name === inputTo)[0];
+                setInputValueTo(inputValueFrom * rate);
+                fetchConvert(inputFrom, inputTo).then((data) => setInputValueTo(data.result * inputValueFrom));
+            }, [inputValueFrom, inputFrom, inputTo, currencies]);
 
     useEffect(() => {
         const { rate } = currencies.filter((item) => item.name === inputTo)[0];

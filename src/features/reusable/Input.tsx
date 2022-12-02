@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { CurrencyCodeType } from '../types';
 
 interface InputProps {

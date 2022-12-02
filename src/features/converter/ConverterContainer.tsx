@@ -27,12 +27,12 @@ const ConverterContainer = ({ currencies }: ConverterContainerProps) => {
         setIsActiveFrom(false);
         setInputValueFrom(Number(e.currentTarget.value));
     };
-        const x = '';
-        console.log();
-        const obj = {
-            a: 1,
-            b: 2,
-        };
+                    const x = '';
+                    console.log();
+                    const obj = {
+                        a: 1,
+                        b: 2,
+                    };
             useEffect(() => {
                 const { rate } = currencies.filter((item) => item.name === inputTo)[0];
                 setInputValueTo(inputValueFrom * rate);
